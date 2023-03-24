@@ -1,0 +1,32 @@
+html,
+body {
+    font-family: "Poppins", sans-serif !important;
+}
+
+.btn-green {
+    border-width: 2px !important;
+    border-color: #117929 !important;
+    color: #117929 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    border-radius: 20px !important;
+}
+
+.btn-green:hover {
+    background-color: #117929 !important;
+    color: #fff !important;
+}
+
+.brand span {
+    color: #000 !important;
+}
+
+.row .result-row {
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.result-row>div {
+    padding-right: 5px;
+    padding-left: 5px;
+}

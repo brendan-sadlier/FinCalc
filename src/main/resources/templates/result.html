@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+  <title>Compound Interest Calculator</title>
+  <link rel="icon" href="images/calculator.png" type="image/x-icon">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="container-fluid shadow">
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-2">
+    <a href="/" class="brand d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none ms-3">
+      <img width="30" height="30" src="images/calculator.png">
+      <span class="navbar-header fs-4 ms-3">FinCalc</span>
+    </a>
+
+    <a class="btn btn-green" href="/login">Login</a>
+  </header>
+</div>
+
+<main>
+
+  <div class="container align-items-center justify-content-center mt-4 text-center">
+
+    <div class="row row-cols-1 justify-content-center" th:each="calculation : ${currentCompCalc}">
+
+      <div class="col text-center">
+        <h1 class="display-6 fw-bold text-body-emphasis mt-2 mb-5">Compound Interest Calculator</h1>
+
+        <div>
+          <h4 class="d-inline display-7 fw-bold text-body-emphasis mt-5">Total Amount incl. Interest:</h4>
+          <h4 class="d-inline display-7 text-body-emphasis ms-1" th:text="${calculation.total}"></h4>
+        </div>
+
+        <div class="mt-2">
+          <h5 class="d-inline display-7 fw-bold text-body-emphasis">Total Interest: </h5>
+          <h5 class="d-inline display-7 text-body-emphasis ms-1" th:text="${calculation.totalInterest}"></h5>
+        </div>
+
+      </div>
+
+      <div class="container mt-3">
+        <div class="row justify-content-center">
+          <div class="col-md-10 mb-1">
+            <p class="d-inline fw-bold">Principal amount of the loan:</p>
+            <p class="d-inline ms-1" th:text="${calculation.principal}"></p>
+          </div>
+          <div class="col-md-10 mb-1">
+            <p class="d-inline fw-bold">APR:</p>
+            <p class="d-inline ms-1" th:text="${calculation.apr}"></p>
+          </div>
+          <div class="col-md-10 mb-1">
+            <p class="d-inline fw-bold">Compound (in months):</p>
+            <p class="d-inline ms-1" th:text="${calculation.compound}"></p>
+          </div>
+          <div class="col-md-10">
+            <p class="d-inline fw-bold">Time (in years):</p>
+            <p class="d-inline ms-1" th:text="${calculation.time}"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-4">
+        <div class="row justify-content-center">
+          <div class="col-md-4 text-center">
+            <a class="btn btn-green me-2" href="/compound-interest-calculator">New Calculation</a>
+            <a class="btn btn-green ms-2" href="/">Home</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
